@@ -1,0 +1,2 @@
+- name: fetch-file-action
+  uses: FoxtrotPerry/fetch-file-action@v0-alpha
