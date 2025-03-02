@@ -1,2 +1,8 @@
-- name: fetch-file-action
-  uses: FoxtrotPerry/fetch-file-action@v0-alpha
+            - name: Fetch URL
+  # You may pin to the exact commit or the version.
+  # uses: boyeln/fetch-url-action@ff420affd24e1d8131bc65b8cd4c1b9bdd9fb11f
+  uses: boyeln/fetch-url-action@v1.1
+  with:
+    # The url to fetch
+    url: 
+          
