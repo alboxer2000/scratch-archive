@@ -1,0 +1,14 @@
+name: Download project
+
+on: workflow_dispatch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: valitydev/action-download-file@v1
+        with:
+          url: https://api.scratch.mit.edu/projects/104/
+          target-path: ./api/projects/104
