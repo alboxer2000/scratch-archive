@@ -1,4 +1,4 @@
-name: Download project
+name: Download Weekend
 
 on: workflow_dispatch
 
