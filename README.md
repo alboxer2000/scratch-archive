@@ -1,1 +1,1 @@
-This is an archive of a lot of Scratch projects and studios with their other data.
+We're moving to archive.org! archive.org/scratch-website-archive. You can still report issues here and make PR, since this is now a mirror of the archived data.
