@@ -1,1 +1,0 @@
-We're moving to archive.org! archive.org/scratch-website-data. You can still report issues here and make PR, since this is now a mirror of the archived data.
