@@ -10,21 +10,18 @@ jobs:
       issues: write
 
     steps:
-      - name: Create Sub-Issues
+      - name: Create 10 Sub-Issues
+        id: create_issues
         uses: actions/github-script@v6
         with:
           script: |
             // This script uses a loop to create 10 new issues.
-            const parentIssueNumber = 2;
             const issueCount = 100;
-            const parentIssueBody = `This issue is a parent for ${issueCount} sub-issues.`;
-            
-            // Define the body for the parent issue, which will contain a checklist.
-            let issueBody = parentIssueBody + "\n\n### Sub-issues\n";
+            const newIssueNumbers = [];
 
-            // Loop to create each sub-issue and add it to the parent issue's checklist.
+            // Loop to create each sub-issue.
             for (let i = 1; i <= issueCount; i++) {
-              const title = `Add thumbnail of project (${i})`;
+              const title = `Add thumbnail of project ${i}`;
               
               // Create the new sub-issue.
               const newIssue = await github.rest.issues.create({
@@ -32,12 +29,30 @@ jobs:
                 repo: context.repo.repo,
                 title: title
               });
+              newIssueNumbers.push(newIssue.data.number);
+            }
+            // Set the new issue numbers as an output
+            core.setOutput('new_issue_numbers', JSON.stringify(newIssueNumbers));
 
-              // Add the newly created issue to our parent issue's body as a checklist item.
-              issueBody += `- [ ] #${newIssue.data.number} ${title}\n`;
+      - name: Update Parent Issue with Sub-Issues
+        uses: actions/github-script@v6
+        with:
+          script: |
+            // This script updates the parent issue with a checklist of sub-issues.
+            const parentIssueNumber = 2;
+            const newIssueNumbers = JSON.parse('${{ steps.create_issues.outputs.new_issue_numbers }}');
+            
+            let issueBody = `This issue is a parent for ${newIssueNumbers.length} sub-issues.\n\n### Sub-issues\n`;
+            
+            for (const issueNumber of newIssueNumbers) {
+              const issue = await github.rest.issues.get({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issueNumber
+              });
+              issueBody += `- [ ] #${issue.data.number} ${issue.data.title}\n`;
             }
 
-            // Update the parent issue (#2) with the new checklist of sub-issues.
             await github.rest.issues.update({
               owner: context.repo.owner,
               repo: context.repo.repo,
