@@ -19,9 +19,12 @@ jobs:
             const issueCount = 100;
             const newIssueNumbers = [];
 
+            // Helper function to create a delay.
+            const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
             // Loop to create each sub-issue.
             for (let i = 1; i <= issueCount; i++) {
-              const title = `Add thumbnail of project ${i}`;
+              const title = `Add thumbnail of project (${i})`;
               
               // Create the new sub-issue.
               const newIssue = await github.rest.issues.create({
@@ -30,6 +33,9 @@ jobs:
                 title: title
               });
               newIssueNumbers.push(newIssue.data.number);
+
+              // Wait for 1 second before creating the next issue.
+              await delay(5000);
             }
             // Set the new issue numbers as an output
             core.setOutput('new_issue_numbers', JSON.stringify(newIssueNumbers));
