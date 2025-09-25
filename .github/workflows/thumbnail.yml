@@ -1,4 +1,4 @@
-name: Create Thumbnail Sub-Issues
+name: Create Sub-Issues
 
 on:
   workflow_dispatch:
@@ -6,11 +6,41 @@ on:
 jobs:
   create_sub_issues:
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
+
     steps:
-      - name: Create Thumbnail Sub-Issues
-        uses: gabor-gulyas/create-sub-issues@v1
+      - name: Create Sub-Issues
+        uses: actions/github-script@v6
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          parent-issue-number: 2
-          title-template: "Add thumbnail of project (%d)"
-          count: 100
+          script: |
+            // This script uses a loop to create 10 new issues.
+            const parentIssueNumber = 2;
+            const issueCount = 100;
+            const parentIssueBody = `This issue is a parent for ${issueCount} sub-issues.`;
+            
+            // Define the body for the parent issue, which will contain a checklist.
+            let issueBody = parentIssueBody + "\n\n### Sub-issues\n";
+
+            // Loop to create each sub-issue and add it to the parent issue's checklist.
+            for (let i = 1; i <= issueCount; i++) {
+              const title = `Add thumbnail of project (${i})`;
+              
+              // Create the new sub-issue.
+              const newIssue = await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: title
+              });
+
+              // Add the newly created issue to our parent issue's body as a checklist item.
+              issueBody += `- [ ] #${newIssue.data.number} ${title}\n`;
+            }
+
+            // Update the parent issue (#2) with the new checklist of sub-issues.
+            await github.rest.issues.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: parentIssueNumber,
+              body: issueBody
+            });
