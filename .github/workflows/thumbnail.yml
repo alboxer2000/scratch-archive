@@ -1,0 +1,16 @@
+name: Create Thumbnail Sub-Issues
+
+on:
+  workflow_dispatch:
+
+jobs:
+  create_sub_issues:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Thumbnail Sub-Issues
+        uses: gabor-gulyas/create-sub-issues@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          parent-issue-number: 2
+          title-template: "Add thumbnail of project (%d)"
+          count: 100
