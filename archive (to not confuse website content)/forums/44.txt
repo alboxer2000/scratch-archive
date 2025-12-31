@@ -3,4 +3,4 @@ post author: cheddargirl
 post content:
 The RSS button is next to the forum title thread when viewing that specific topic. I'm subscribing to a few topics right now, hopefully they won't slow down my Aurora browser! 
 
-Are we keeping the RSS feeds for Scratch 2.0? It would be a nice alternative for those who want to get messages about updated topics, especially for those who want to keep tabs on their favorite threads without need for an e-mail address. <img>https://scratch.mit.edu/discuss/topic/13/http%3Cimg%20src=</img>/alpha.scratch.mit.edu/scratchr2/static/djangobb_forum/img/smilies/smile.png" />
+Are we keeping the RSS feeds for Scratch 2.0? It would be a nice alternative for those who want to get messages about updated topics, especially for those who want to keep tabs on their favorite threads without need for an e-mail address. [img]https://scratch.mit.edu/discuss/topic/13/http%3Cimg%20src=[/img]/alpha.scratch.mit.edu/scratchr2/static/djangobb_forum/img/smilies/smile.png" />
