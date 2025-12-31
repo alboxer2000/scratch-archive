@@ -1,0 +1,6 @@
+in topic: 11
+post author: Lightnin
+post content:
+Just a heads up that we're planning on doing a database migration again this weekend, so the projects / etc. on the alpha will be updated based on a snapshot of the current Scratch website from today or tomorrow.
+
+Then next week we'll be inviting a bunch of new testers - people who've curated, SDS curators, TBG mods, and Collab Counselors. 
