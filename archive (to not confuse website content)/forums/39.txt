@@ -1,0 +1,4 @@
+in topic: 9
+post author: Lightnin
+post content:
+Just a heads up to let you know that we'll be changing the way the alpha site is accessed soon. Instead of entering a username (alpha1-testers) and the password you were given earlier, just enter the password as the access code. You'll see when the different system takes effect - the login prompt is more scratchy. 
