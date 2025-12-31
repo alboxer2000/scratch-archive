@@ -1,0 +1,6 @@
+in topic: 13
+post author: scimonster
+post content:
+Oh nice. There were some RSS feeds on the old forums, but not for specific topics.
+
+You use Aurora? Cool. I would, except i can't figure out how to install it from a tar file.
