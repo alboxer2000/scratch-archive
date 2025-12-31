@@ -1,0 +1,6 @@
+in topic: 9
+post author: scmb1
+post content:
+I was just making a little e calculator and remembered a problem I sometimes have with numbers in Scratch– they tend to round off at a few decimal places. This works just fine most of the time, but for some projects it can be useful to show more (like e and pi generators for instance.) For a while I was making a bunch of projects that required more decimal places and I used something I liked to call the “join trick” (http://scratch.mit.edu/forums/viewtopic.php?id=30650). Putting an expression inside of a join block caused the number not to be rounded quite so much. This still works, but not many Scratchers know about it. Would it be useful to have a more obvious way to do this? Maybe a special block or setting that lets numbers have more decimal places? 
+
+Here's that e project, with and without the join trick: http://alpha.scratch.mit.edu/projects/10003629/?mode=player
