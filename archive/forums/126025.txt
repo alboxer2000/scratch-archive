@@ -1,0 +1,6 @@
+in topic: 14690
+post author: natalie
+post content:
+Hi all! Just a reminder to delete your previous 2.0 offline editor, if you have one from earlier this week! This has a new name and many bug fixes, so you need to delete the previous 2.0 beta if you already installed it.
+
+You can keep 1.4 installed, no problem!
