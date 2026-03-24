@@ -1,0 +1,9 @@
+in topic: 13
+post author: cheddargirl
+post content:
+[quote=scimonster]Oh nice. There were [url=http://wiki.scratch.mit.edu/wiki/RSS_Feeds#Scratch_Forums]some RSS feeds[/url] on the old forums, but not for specific topics.
+
+You use Aurora? Cool. I would, except i can't figure out how to install it from a tar file.[/quote]
+Use a fancy free decompression program like 7-Zip? :P
+
+But I'm curious - I got Aurora on my computer via .exe file installer file. Where the heck did you get a tar file? 
